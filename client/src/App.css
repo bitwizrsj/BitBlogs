@@ -1,0 +1,49 @@
+/* App.css or global styles */
+
+:root {
+  --background-light: #ffffff;
+  --background-dark: #384454;
+  --footer-light: #f1f1f1;
+  --footer-dark: #374151;
+}
+
+.dark {
+  --background-light: var(--background-dark);
+  --footer-light: var(--footer-dark);
+}
+
+body {
+  background-color: var(--background-light);
+  transition: background-color 0.3s ease;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  flex: 1;
+}
+
+footer {
+  background-color: var(--footer-light);
+  text-align: center;
+  padding: 1rem;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  transition: background-color 0.3s ease;
+}
+
+/* Additional styles for text color in dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #e5e7eb;
+  }
+}
+
+.dark body {
+  color: #e5e7eb;
+}
