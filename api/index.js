@@ -21,7 +21,6 @@ mongoose.connect(process.env.MONGO_URI)
     console.error('Error connecting to MongoDB:', err);
   });
 
-
 const app = express();
 
 // Middleware to parse JSON requests
@@ -47,7 +46,7 @@ app.use('/api/post', postRoutes);
 app.use('/api/comment', commentRoutes);
 
 // Serve static files from the client directory
-app.use(express.static(path.join(__dirname, '/client/dist')));
+app.use(express.static(path.join(__dirname, 'client', 'dist')));
 
 // Catch-all route to handle client-side routing
 app.get('*', (req, res) => {
